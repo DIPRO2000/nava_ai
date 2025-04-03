@@ -26,6 +26,14 @@ const Landing = () => {
     }
   }
 
+  const signupRedirect=()=>{
+      navigate("/signup")
+  }
+
+  const loginRedirect=()=>{
+    navigate("/login");
+  }
+
 
   return (
     <div>
@@ -42,8 +50,8 @@ const Landing = () => {
             <a data-aos="fade-down" data-aos-duration="3000" href="#">Docs</a>
           </nav>
           
-          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing"><a href="/signup">Sign Up</a></button>
-          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing"><a href="/login">Log In</a></button>
+          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={signupRedirect}>Sign Up</button>
+          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={loginRedirect}>Log In</button>
         </header>
 
         <main>
