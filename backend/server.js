@@ -31,6 +31,11 @@ async function connectDB() {
 
 connectDB();
 
+//checking Route
+app.get("/", (req, res) => {
+  res.send("Backend is live!");
+});
+
 // Routes
 app.use("/api/users", userRoutes); // Signup, Login Routes
 app.use("/api/chats", chatRoutes); // Chat History Routes
