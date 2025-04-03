@@ -49,10 +49,10 @@ const SignUp = () => {
         });
 
         setTimeout(() => {
-          window.location.href = "/login"; // Redirect after signup
-        }, 2000);
+          navigate("/login") // Redirect after signup
+        }, 1000);
       } else {
-        alert(`❌hello ${data.message}`);
+        alert(`❌ ${data.message}`);
       }
     } catch (error) {
       console.error("Signup Error:", error);
