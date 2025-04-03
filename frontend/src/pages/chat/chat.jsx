@@ -7,6 +7,7 @@ export default function ChatPage() {
   const [loading, setLoading] = useState(false);
   const [chatHistory, setChatHistory] = useState([]); // Stores chat sessions
   const [selectedChat, setSelectedChat] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const firstName = localStorage.getItem("firstName");
 
   // ✅ Messages will now properly belong to their session
@@ -20,7 +21,7 @@ export default function ChatPage() {
       const token = localStorage.getItem("Token");
 
       try {
-        const response = await fetch("http://localhost:3000/api/chats/history", {
+        const response = await fetch(`${API_BASE_URL}/api/chats/history`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +56,7 @@ export default function ChatPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3000/api/chats/send", {
+      const response = await fetch(`${API_BASE_URL}/api/chats/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

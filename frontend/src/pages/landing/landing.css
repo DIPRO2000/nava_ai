@@ -10,6 +10,7 @@
     color: #e7e7e7;
     min-height: 100vh;
     line-height: 1.5;
+    cursor:default;
     overflow:hidden;
   }
   .image-gradient{
@@ -52,10 +53,18 @@
     transition: color 0.2s ease;
     text-decoration: none;
     color: inherit;
+    cursor:pointer;
     z-index: 999;
   }
   nav a:hover{
     color: #a7a7a7;
+  }
+  .btn-group
+  {
+    display:flex;
+    gap:1rem;
+    position:relative;
+    left:15rem;
   }
   .btn-signing{
     background-color: #a7a7a7;
@@ -91,7 +100,9 @@
     background: linear-gradient(to right #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
     background-size: 200%;
     animation: animationGradient 2.5s linear infinite;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
+    overflow:hidden;
+    cursor:default;
   }
   
   @keyframes animationGradient{
@@ -128,8 +139,10 @@
   }
   .buttons{
     display: flex;
-    gap: 1rem;
+    margin-top:2rem;
+    gap: 2rem;
   }
+
   .btn-get-started{
     text-decoration: none;
     border: 1px solid #2a2a2a;
@@ -139,7 +152,13 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     transition: background-color 0.2s ease;
+    cursor:pointer;
   }
+  .btn-get-started:hover {
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease-in;
+  }
+  
   .btn-signing-main{
     text-decoration: none;
     background-color: lightgray;
@@ -150,6 +169,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     transition: background-color 0.2s ease;
+    cursor:pointer;
   }
   .btn-signing-main:hover{
     background-color: gray;

@@ -8,6 +8,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate(); // For redirecting to another page after successful login
 
   // Handle form submission
@@ -23,7 +24,7 @@ export default function LoginPage() {
     setError(""); // Reset error state
 
     try {
-      const response = await fetch("http://localhost:3000/api/users/login", {
+      const response = await fetch(`${API_BASE_URL}/api/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,6 +51,10 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
+  const signupRedirect=()=>{
+    navigate("/signup")
+  }
 
   return (
     <div className="h-screen flex justify-center items-center "
@@ -106,7 +111,7 @@ export default function LoginPage() {
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
-            <a href="/signup" className="text-blue-700 hover:underline">
+            <a onClick={signupRedirect} className="text-blue-700 hover:underline">
               Sign up
             </a>
           </p>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../../components/UI/Card"; // Assuming Card component exists
 import grad from "../../assets/gradient.png";
 
@@ -11,6 +12,9 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,7 +29,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/users/signup", {
+      const response = await fetch(`${API_BASE_URL}/api/users/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -55,6 +59,10 @@ const SignUp = () => {
       alert("❌ Server error. Please try again!");
     }
   };
+
+  const loginRedirect=()=>{
+    navigate("/login");
+  }
 
   return (
     <div className="h-screen flex justify-center items-center"
@@ -131,7 +139,7 @@ const SignUp = () => {
 
           <p className="text-sm text-gray-200 mt-3 text-center">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-700 hover:underline">
+            <a onClick={loginRedirect} className="text-blue-700 hover:underline">
               Log in
             </a>
           </p>

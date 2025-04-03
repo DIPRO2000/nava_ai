@@ -44,14 +44,16 @@ const Landing = () => {
         <header>
           <h1 data-aos="fade-down" data-aos-duration="1500" className="logo">NavaAI</h1>
           <nav>
-            <a data-aos="fade-down" data-aos-duration="1500" href="#">Company</a>
-            <a data-aos="fade-down" data-aos-duration="2000" href="#">Features</a>
-            <a data-aos="fade-down" data-aos-duration="2500" href="#">Resources</a>
-            <a data-aos="fade-down" data-aos-duration="3000" href="#">Docs</a>
+            <a data-aos="fade-down" data-aos-duration="1500">Company</a>
+            <a data-aos="fade-down" data-aos-duration="2000">Features</a>
+            <a data-aos="fade-down" data-aos-duration="2500">Resources</a>
+            <a data-aos="fade-down" data-aos-duration="3000">Docs</a>
           </nav>
+          <div className="btn-group ">
+            <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={signupRedirect}>Sign Up</button>
+            <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={loginRedirect}>Log In</button>
+          </div>
           
-          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={signupRedirect}>Sign Up</button>
-          <button data-aos="fade-down" data-aos-duration="1500" className="btn-signing" onClick={loginRedirect}>Log In</button>
         </header>
 
         <main>
@@ -61,7 +63,7 @@ const Landing = () => {
             data-aos-delay="300"
             data-aos-offset="0"
             data-aos-duration="1500"
-            className="content"
+            className="content cursor-"
           >
             <div className="tag-box">
               <div className="tag">INTRODUCING</div>
@@ -85,6 +87,7 @@ const Landing = () => {
               data-aos-duration="2500"
               className="description"
             >
+              <b>Nava AI</b> is a <b>smart</b>,<b>scalable</b>, and <b>AI-driven chat assistant</b>.
               The best way to reach humans instead of spam folder, deliver transactional and marketing emails at scale.
             </p>
 
@@ -96,7 +99,7 @@ const Landing = () => {
               data-aos-duration="3000"
               className="buttons"
             >
-              <a href="/login" className="btn-get-started">Documentation &gt;</a>
+              <a className="btn-get-started">Documentation &gt;</a>
               <a onClick={loginChecker} className="btn-signing-main">Get Started &gt;</a>
             </div>
           </div>
